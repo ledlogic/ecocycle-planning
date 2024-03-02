@@ -1,18 +1,3 @@
-function tb(at, t, x, y, fs, ff, w, h) {
-	var ret = new BABYLON.GUI.TextBlock();
-	ret.text = t;
-	ret.color = "white";
-	ret.fontSize = fs;
-	ret.fontFamily = ff;
-	ret.left = x;
-	ret.top = y;
-	ret.textWrapping = 1;
-	ret.textVerticalAlignment = 0;
-	if (w) ret.width = w;
-	if (h) ret.height = h;
-	at.addControl(ret);
-}
-
 var canvas = document.getElementById("renderCanvas");
 
 var startRenderLoop = function(engine, canvas) {
