@@ -40,8 +40,23 @@ var createScene = function() {
 	// GUI
 	var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
 
-	tb(advancedTexture, "Scarcity Trap", "-40%", "48%", 24, "Bahnschrift");
-	tb(advancedTexture, "Something we consider valuable, but don't invest enough time in.", "-40%", "52%", 10, "Bahnschrift Light", "100px");
+	tb(advancedTexture, "Scarcity Trap", "-38%", "48%", 24, "Bahnschrift");
+	tb(advancedTexture, "Considered valuable, but don't invest enough time in..", "-38%", "52%", 10, "Bahnschrift Light", "100px");
+
+	tb(advancedTexture, "Gestation", "-19.25%", "25.5%", 24, "Bahnschrift");
+	tb(advancedTexture, "Currently don't do but might do.", "-19.25%", "29.5%", 10, "Bahnschrift Light", "100px");
+
+	tb(advancedTexture, "Maturity", "19.25%", "25.5%", 24, "Bahnschrift");
+	tb(advancedTexture, "Something that provides us value.", "19.25%", "29.5%", 10, "Bahnschrift Light", "100px");
+
+	tb(advancedTexture, "Rigidity Trap", "38%", "48%", 24, "Bahnschrift");
+	tb(advancedTexture, "Something we should let go of or change but keep doing.", "38%", "52%", 10, "Bahnschrift Light", "100px");
+
+	tb(advancedTexture, "Creative Destruction", "19.25%", "68%", 24, "Bahnschrift");
+	tb(advancedTexture, "Actively changing or rethinking.", "19.25%", "72%", 10, "Bahnschrift Light", "100px");
+
+	tb(advancedTexture, "Birth", "-19.25%", "68%", 24, "Bahnschrift");
+	tb(advancedTexture, "Recently started investing time in.", "-19.25%", "72%", 10, "Bahnschrift Light", "100px");
 
 	//track Bernoulli
 	var points2 = [];
