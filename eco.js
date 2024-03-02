@@ -44,11 +44,13 @@ var createScene = function() {
 	addTextBlock(ui, "Scarcity Trap", pct(x), pct(y), 24, "Bahnschrift");
 	addTextBlock(ui, "Considered valuable, but don't invest enough time in.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
 
-	addTextBlockRadial(ui, "Scar 1 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 1, 1, 5);
-	addTextBlockRadial(ui, "Scar 2 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 1, 2, 5);
-	addTextBlockRadial(ui, "Scar 3 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 1, 3, 5);
-	addTextBlockRadial(ui, "Scar 4 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 1, 4, 5);
-	addTextBlockRadial(ui, "Scar 5 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 1, 5, 5);
+	var items = [
+		"Scar 1 xxxxxxxxxxx yyyyyyyyy",
+		"Scar 2 xxxxxxxxxxx yyyyyyyyy",
+		"Scar 3 xxxxxxxxxxx yyyyyyyyy",
+		"Scar 4 xxxxxxxxxxx yyyyyyyyy"
+	];
+	addTextBlockItems(ui, x, y, 1, items);	
 
 	x = -19.25;
 	y = 25.5;
@@ -56,9 +58,13 @@ var createScene = function() {
 	addTextBlock(ui, "Gestation", pct(x), pct(y), 24, "Bahnschrift");
 	addTextBlock(ui, "Currently don't do but might do.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
 
-	addTextBlockRadial(ui, "Gest 1 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 1, 3);
-	addTextBlockRadial(ui, "Gest 2 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 2, 3);
-	addTextBlockRadial(ui, "Gest 3 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 3, 3);
+	var items = [
+		"Gest 1 xxxxxxxxxxx yyyyyyyyy",
+		"Gest 2 xxxxxxxxxxx yyyyyyyyy",
+		"Gest 3 xxxxxxxxxxx yyyyyyyyy",
+		"Gest 4 xxxxxxxxxxx yyyyyyyyy"
+	];
+	addTextBlockItems(ui, x, y, 0, items);	
 
 	x = 19.25;
 	y = 25.5;
@@ -66,9 +72,12 @@ var createScene = function() {
 	addTextBlock(ui, "Maturity", pct(x), pct(y), 24, "Bahnschrift");
 	addTextBlock(ui, "Something that provides us value.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
 
-	addTextBlockRadial(ui, "Maturity 1 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 1, 3);
-	addTextBlockRadial(ui, "Maturity 2 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 2, 3);
-	addTextBlockRadial(ui, "Maturity 3 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 3, 3);
+	var items = [
+		"Mat 1 xxxxxxxxxxx yyyyyyyyy",
+		"Mat 2 xxxxxxxxxxx yyyyyyyyy",
+		"Mat 3 xxxxxxxxxxx yyyyyyyyy"
+	];
+	addTextBlockItems(ui, x, y, 0, items);	
 
 	x = 38;
 	y = 48;
@@ -76,9 +85,13 @@ var createScene = function() {
 	addTextBlock(ui, "Rigidity Trap", pct(x), pct(y), 24, "Bahnschrift");
 	addTextBlock(ui, "Something we should let go of or change but keep doing.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
 
-	addTextBlockRadial(ui, "Rigid 1 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 1, 1, 3);
-	addTextBlockRadial(ui, "Rigid 2 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 1, 2, 3);
-	addTextBlockRadial(ui, "Rigid 3 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 1, 3, 3);
+	var items = [
+		"Rigid 1 xxxxxxxxxxx yyyyyyyyy",
+		"Rigid 2 xxxxxxxxxxx yyyyyyyyy",
+		"Rigid 3 xxxxxxxxxxx yyyyyyyyy",
+		"Rigid 4 xxxxxxxxxxx yyyyyyyyy"
+	];
+	addTextBlockItems(ui, x, y, 1, items);	
 
 	x = 19.25;
 	y = 68;
@@ -86,21 +99,25 @@ var createScene = function() {
 	addTextBlock(ui, "Creative Destruction", pct(x), pct(y), 24, "Bahnschrift");
 	addTextBlock(ui, "Actively changing or rethinking.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
 
-	addTextBlockRadial(ui, "Dest 1 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 1, 3);
-	addTextBlockRadial(ui, "Dest 2 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 2, 3);
-	addTextBlockRadial(ui, "Dest 3 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 3, 3);
-
+	var items = [
+		"Dest 1 xxxxxxxxxxx yyyyyyyyy",
+		"Dest 2 xxxxxxxxxxx yyyyyyyyy",
+		"Dest 3 xxxxxxxxxxx yyyyyyyyy",
+		"Dest 4 xxxxxxxxxxx yyyyyyyyy"
+	];
+	addTextBlockItems(ui, x, y, 0, items);
+	
 	x = -19.25;
 	y = 68;
 	console.log("birth");
 	addTextBlock(ui, "Birth", pct(x), pct(y), 24, "Bahnschrift");
 	addTextBlock(ui, "Recently started investing time in.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
-
-	addTextBlockRadial(ui, "Birth 1 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 1, 5);
-	addTextBlockRadial(ui, "Birth 2 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 2, 5);
-	addTextBlockRadial(ui, "Birth 3 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 3, 5);
-	addTextBlockRadial(ui, "Birth 4 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 4, 5);
-	addTextBlockRadial(ui, "Birth 5 xxxxxxxxxxx yyyyyyyyy", pct(x), pct(y), 10, "Bahnschrift Light", 0, 5, 5);
+	
+	var items = [
+		"Birth 1 xxxxxxxxxxx yyyyyyyyy",
+		"Birth 2 xxxxxxxxxxx yyyyyyyyy",
+	];
+	addTextBlockItems(ui, x, y, 0, items);	
 
 	addInfinity(scene, 2);
 	addInfinity(scene, 1.9);
@@ -178,13 +195,13 @@ function addTextBlockRadial(at, t, x, y, fs, ff, hv, i, n) {
 	var nx = 0;
 	var ny = 0;
 	if (hv === 0) {
-		nx = pct(rx + (hPct + hPad) * (i - n + 1)/2);
+		nx = pct(rx + (hPct + hPad) * (i - n + (n+1)/2)/2);
 		ny = pct(ry * 1.125 + (ly < 0 ? -8 : 0));
 		w = pct(hPct);
 	} else {
 		w = pct(vPct);
 		nx = pct(rx * 1.225 + (ly > 0 ? 0.5 : 0));
-		ny = pct(ry + (vPct + vPad) * (i - n + 1)/2);
+		ny = pct(ry + (vPct + vPad) * (i - n + (n+1)/2)/2);
 	}
 	console.log(r, rx, ry, lx, ly, lx2, ly2, nx, ny);
 	//console.log(y, ry, ly);	
@@ -193,4 +210,10 @@ function addTextBlockRadial(at, t, x, y, fs, ff, hv, i, n) {
 
 function pct(p) {
 	return p+"%";
+}
+
+function addTextBlockItems(ui, x, y, hv, items) {
+	for (var i=0; i<items.length; i++) {
+		addTextBlockRadial(ui, items[i], pct(x), pct(y), 10, "Bahnschrift Light", hv, i, items.length);
+	}
 }
