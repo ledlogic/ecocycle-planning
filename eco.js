@@ -40,68 +40,44 @@ var createScene = function() {
 
 	addTextBlock(ui, "Ecocycle Planning", "0", "4%", 48, "Bahnschrift Condensed");
 	
-	console.log("scarcity");
-	x = -38;
-	y = 48;
-	var items = [
+	addStop(ui, "Scarcity Trap", "Considered valuable, but don't invest enough time in.", -38, 48, 1, [
 		"Scar 1 xxxxxxxxxxx yyyyyyyyy",
 		"Scar 2 xxxxxxxxxxx yyyyyyyyy",
 		"Scar 3 xxxxxxxxxxx yyyyyyyyy",
 		"Scar 4 xxxxxxxxxxx yyyyyyyyy"
-	];
-	addStop(ui, "Scarcity Trap", "Considered valuable, but don't invest enough time in.", x, y, 1, items);
+	]);
 
-	console.log("gestation");
-	x = -19.25;
-	y = 25.5;
-	var items = [
+	addStop(ui, "Gestation", "Currently don't do but might do.", -19.25, 25.5, 0, [
 		"Gest 1 xxxxxxxxxxx yyyyyyyyy",
 		"Gest 2 xxxxxxxxxxx yyyyyyyyy",
 		"Gest 3 xxxxxxxxxxx yyyyyyyyy",
 		"Gest 4 xxxxxxxxxxx yyyyyyyyy"
-	];
-	addStop(ui, "Gestation", "Currently don't do but might do.", x, y, 0, items);
+	]);
 
-	console.log("maturity");
-	x = 19.25;
-	y = 25.5;
-	var items = [
+	addStop(ui, "Maturity", "Something that provides us value.", 19.25, 25.5, 0, [
 		"Mat 1 xxxxxxxxxxx yyyyyyyyy",
 		"Mat 2 xxxxxxxxxxx yyyyyyyyy",
 		"Mat 3 xxxxxxxxxxx yyyyyyyyy"
-	];
-	addStop(ui, "Maturity", "Something that provides us value.", x, y, 0, items);
+	]);
 
-	console.log("rigidity");
-	x = 38;
-	y = 48;
-	var items = [
+	addStop(ui, "Rigidity Trap", "Something we should let go of or change but keep doing.", 38, 48, 1, [
 		"Rigid 1 xxxxxxxxxxx yyyyyyyyy",
 		"Rigid 2 xxxxxxxxxxx yyyyyyyyy",
 		"Rigid 3 xxxxxxxxxxx yyyyyyyyy",
 		"Rigid 4 xxxxxxxxxxx yyyyyyyyy"
-	];
-	addStop(ui, "Rigidity Trap", "Something we should let go of or change but keep doing.", x, y, 1, items);
+	]);
 
-	console.log("destruction");
-	x = 19.25;
-	y = 68;
-	var items = [
+	addStop(ui, "Creative Destruction", "Actively changing or rethinking.", 19.25, 68, 0, [
 		"Dest 1 xxxxxxxxxxx yyyyyyyyy",
 		"Dest 2 xxxxxxxxxxx yyyyyyyyy",
 		"Dest 3 xxxxxxxxxxx yyyyyyyyy",
 		"Dest 4 xxxxxxxxxxx yyyyyyyyy"
-	];
-	addStop(ui, "Creative Destruction", "Actively changing or rethinking.", x, y, 0, items);
+	]);
 	
-	console.log("birth");
-	x = -19.25;
-	y = 68;
-	var items = [
+	addStop(ui, "Birth", "Recently started investing time in.", -19.25, 68, 0, [
 		"Birth 1 xxxxxxxxxxx yyyyyyyyy",
 		"Birth 2 xxxxxxxxxxx yyyyyyyyy",
-	];
-	addStop(ui, "Birth", "Recently started investing time in.", x, y, 0, items);
+	]);
 
 	addInfinity(scene, 2);
 	addInfinity(scene, 1.9);
@@ -140,7 +116,7 @@ function addInfinity(scene, baseScale) {
 	var scale = 1;
 	for (var t = 0; t < 2 * Math.PI; t += deltaRads) {
 		scale = baseScale * 2 / (3 - Math.cos(2 * t));
-		points2.push(new BABYLON.Vector3(scale * Math.cos(t), scale * Math.sin(2 * t) / 2, 0));
+		points2.push(new BABYLON.Vector3(scale * Math.cos(t), scale * Math.sin(2 * t) / 2, 1));
 	}
 
 	// close the loop, return to 0
