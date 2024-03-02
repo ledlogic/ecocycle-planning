@@ -28,7 +28,7 @@ var createScene = function() {
 	addTextBlock(ui, "Ecocycle Planning", "0", "4%", 48, "Bahnschrift Condensed");
 	
 	addTextBlock(ui, "Scarcity Trap", "-38%", "48%", 24, "Bahnschrift");
-	addTextBlock(ui, "Considered valuable, but don't invest enough time in..", "-38%", "52%", 10, "Bahnschrift Light", "100px");
+	addTextBlock(ui, "Considered valuable, but don't invest enough time in.", "-38%", "52%", 10, "Bahnschrift Light", "100px");
 
 	addTextBlock(ui, "Gestation", "-19.25%", "25.5%", 24, "Bahnschrift");
 	addTextBlock(ui, "Currently don't do but might do.", "-19.25%", "29.5%", 10, "Bahnschrift Light", "100px");
