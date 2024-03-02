@@ -25,15 +25,11 @@ var foreColor = "#49A742";
 var lineColor = new BABYLON.Color3(.29,.65,.26);
 
 var createScene = function() {
-	var x, y = 0;
-
 	var scene = new BABYLON.Scene(engine);
 	scene.clearColor = BABYLON.Color3.White();
 
 	var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
 	camera.attachControl(canvas, true);
-
-	var light = new BABYLON.HemisphericLight("hemi", new BABYLON.Vector3(0, 1, 0), scene);
 
 	// GUI
 	var ui = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
@@ -80,7 +76,6 @@ var createScene = function() {
 	]);
 
 	addInfinity(scene, 2);
-	addInfinity(scene, 1.9);
 	
 	return scene;
 }
@@ -116,7 +111,7 @@ function addInfinity(scene, baseScale) {
 	var scale = 1;
 	for (var t = 0; t < 2 * Math.PI; t += deltaRads) {
 		scale = baseScale * 2 / (3 - Math.cos(2 * t));
-		points2.push(new BABYLON.Vector3(scale * Math.cos(t), scale * Math.sin(2 * t) / 2, 1));
+		points2.push(new BABYLON.Vector3(scale * Math.cos(t), scale * Math.sin(2 * t) / 2, 0));
 	}
 
 	// close the loop, return to 0
