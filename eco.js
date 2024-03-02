@@ -21,11 +21,14 @@ var hPct = hWidth / 1200 * 100;
 var vPct = vWidth / 1200 * 100;
 var hPad = 8;
 var vPad = 8;
+var foreColor = "#49A742";
+var lineColor = new BABYLON.Color3(.29,.65,.26);
 
 var createScene = function() {
 	var x, y = 0;
 
 	var scene = new BABYLON.Scene(engine);
+	scene.clearColor = BABYLON.Color3.White();
 
 	var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
 	camera.attachControl(canvas, true);
@@ -42,7 +45,7 @@ var createScene = function() {
 	
 	console.log("scarcity");
 	addTextBlock(ui, "Scarcity Trap", pct(x), pct(y), 24, "Bahnschrift");
-	addTextBlock(ui, "Considered valuable, but don't invest enough time in.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
+	addTextBlock(ui, "Considered valuable, but don't invest enough time in.", pct(x), pct(y+4), 10, "Bahnschrift", "100px");
 
 	var items = [
 		"Scar 1 xxxxxxxxxxx yyyyyyyyy",
@@ -56,7 +59,7 @@ var createScene = function() {
 	y = 25.5;
 	console.log("gestation");
 	addTextBlock(ui, "Gestation", pct(x), pct(y), 24, "Bahnschrift");
-	addTextBlock(ui, "Currently don't do but might do.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
+	addTextBlock(ui, "Currently don't do but might do.", pct(x), pct(y+4), 10, "Bahnschrift", "100px");
 
 	var items = [
 		"Gest 1 xxxxxxxxxxx yyyyyyyyy",
@@ -70,7 +73,7 @@ var createScene = function() {
 	y = 25.5;
 	console.log("maturity");
 	addTextBlock(ui, "Maturity", pct(x), pct(y), 24, "Bahnschrift");
-	addTextBlock(ui, "Something that provides us value.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
+	addTextBlock(ui, "Something that provides us value.", pct(x), pct(y+4), 10, "Bahnschrift", "100px");
 
 	var items = [
 		"Mat 1 xxxxxxxxxxx yyyyyyyyy",
@@ -83,7 +86,7 @@ var createScene = function() {
 	y = 48;
 	console.log("rigidity");
 	addTextBlock(ui, "Rigidity Trap", pct(x), pct(y), 24, "Bahnschrift");
-	addTextBlock(ui, "Something we should let go of or change but keep doing.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
+	addTextBlock(ui, "Something we should let go of or change but keep doing.", pct(x), pct(y+4), 10, "Bahnschrift", "100px");
 
 	var items = [
 		"Rigid 1 xxxxxxxxxxx yyyyyyyyy",
@@ -97,7 +100,7 @@ var createScene = function() {
 	y = 68;
 	console.log("destruction");
 	addTextBlock(ui, "Creative Destruction", pct(x), pct(y), 24, "Bahnschrift");
-	addTextBlock(ui, "Actively changing or rethinking.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
+	addTextBlock(ui, "Actively changing or rethinking.", pct(x), pct(y+4), 10, "Bahnschrift", "100px");
 
 	var items = [
 		"Dest 1 xxxxxxxxxxx yyyyyyyyy",
@@ -111,7 +114,7 @@ var createScene = function() {
 	y = 68;
 	console.log("birth");
 	addTextBlock(ui, "Birth", pct(x), pct(y), 24, "Bahnschrift");
-	addTextBlock(ui, "Recently started investing time in.", pct(x), pct(y+4), 10, "Bahnschrift Light", "100px");
+	addTextBlock(ui, "Recently started investing time in.", pct(x), pct(y+4), 10, "Bahnschrift", "100px");
 	
 	var items = [
 		"Birth 1 xxxxxxxxxxx yyyyyyyyy",
@@ -162,14 +165,15 @@ function addInfinity(scene, baseScale) {
 	// close the loop, return to 0
 	points2.push(points2[0]);
 	
-	BABYLON.MeshBuilder.CreateLines('track', { points: points2 }, scene);
+	var linesMesh = BABYLON.MeshBuilder.CreateLines('track', { points: points2 }, scene);
+	linesMesh.color = lineColor;
 }
 
 // addTextBlock
 function addTextBlock(at, t, x, y, fs, ff, w, h) {
 	var ret = new BABYLON.GUI.TextBlock();
 	ret.text = t;
-	ret.color = "white";
+	ret.color = foreColor;
 	ret.fontSize = fs;
 	ret.fontFamily = ff;
 	ret.left = x;
@@ -182,14 +186,9 @@ function addTextBlock(at, t, x, y, fs, ff, w, h) {
 }
 
 function addTextBlockRadial(at, t, x, y, fs, ff, hv, i, n) {
-	var r = i/n;
 	var rx = parseInt(x.replace("%",""),10);
 	var ry = parseInt(y.replace("%",""),10);
-	var lx = rx / Math.abs(rx);
 	var ly = ry > 48 ? 1 : -1;
-	var lx2 = lx * r;
-	var ly2 = ly * r;
-	
 	var w = null;
 	var h = null;
 	var nx = 0;
@@ -203,8 +202,7 @@ function addTextBlockRadial(at, t, x, y, fs, ff, hv, i, n) {
 		nx = pct(rx * 1.225 + (ly > 0 ? 0.5 : 0));
 		ny = pct(ry + (vPct + vPad) * (i - n + (n+1)/2)/2);
 	}
-	console.log(r, rx, ry, lx, ly, lx2, ly2, nx, ny);
-	//console.log(y, ry, ly);	
+	//console.log(r, rx, ry, lx, ly, lx2, ly2, nx, ny);
 	addTextBlock(at, t, nx, ny, fs, ff, w, h);
 }
 
