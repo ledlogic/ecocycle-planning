@@ -37,42 +37,50 @@ var createScene = function() {
 	addTextBlock(ui, "Ecocycle Planning", "0", "4%", 48, "Bahnschrift Condensed");
 	
 	addStop(ui, "Scarcity Trap", "Considered valuable, but don't invest enough time in.", -38, 48, 1, [
-		"Scar 1 xxxxxxxxxxx yyyyyyyyy",
-		"Scar 2 xxxxxxxxxxx yyyyyyyyy",
-		"Scar 3 xxxxxxxxxxx yyyyyyyyy",
-		"Scar 4 xxxxxxxxxxx yyyyyyyyy"
+		"Server and software framework upgrades",
+		"Data Quality Tooling",
+		"Documentation",
+		"Performance Testing",
+		"Sharing knowledge across teams",
+		"Employee Training"
 	]);
 
 	addStop(ui, "Gestation", "Currently don't do but might do.", -19.25, 25.5, 0, [
-		"Gest 1 xxxxxxxxxxx yyyyyyyyy",
-		"Gest 2 xxxxxxxxxxx yyyyyyyyy",
-		"Gest 3 xxxxxxxxxxx yyyyyyyyy",
-		"Gest 4 xxxxxxxxxxx yyyyyyyyy"
+		"LiquiBase",
+		"Docker",
+		"Kafka",
+		"Debugging tools for rendering"
 	]);
 
 	addStop(ui, "Maturity", "Something that provides us value.", 19.25, 25.5, 0, [
-		"Mat 1 xxxxxxxxxxx yyyyyyyyy",
-		"Mat 2 xxxxxxxxxxx yyyyyyyyy",
-		"Mat 3 xxxxxxxxxxx yyyyyyyyy"
+		"Order engine",
+		"Configurators",
+		"Promotion code engine",
+		"Webmonitor Monitoring Tool"
 	]);
 
 	addStop(ui, "Rigidity Trap", "Something we should let go of or change but keep doing.", 38, 48, 1, [
-		"Rigid 1 xxxxxxxxxxx yyyyyyyyy",
-		"Rigid 2 xxxxxxxxxxx yyyyyyyyy",
-		"Rigid 3 xxxxxxxxxxx yyyyyyyyy",
-		"Rigid 4 xxxxxxxxxxx yyyyyyyyy"
+		"Date-driven releases",
+		"Exceeding meeting times",
+		"Interupts to sprint SDLC process",
+		"Plan changes",
+		"Manual deployment steps",
+		"Late game changing of data",
+		"Changing development staff on rendering projects"
 	]);
 
 	addStop(ui, "Creative Destruction", "Actively changing or rethinking.", 19.25, 68, 0, [
-		"Dest 1 xxxxxxxxxxx yyyyyyyyy",
-		"Dest 2 xxxxxxxxxxx yyyyyyyyy",
-		"Dest 3 xxxxxxxxxxx yyyyyyyyy",
-		"Dest 4 xxxxxxxxxxx yyyyyyyyy"
+		"Ensure releasable code by EOS",
+		"Scripting upgrades",
+		"Restructuring f5 rules",
+		"Non-flash rendering process",
+		"Switch to gitflow"
 	]);
 	
 	addStop(ui, "Birth", "Recently started investing time in.", -19.25, 68, 0, [
-		"Birth 1 xxxxxxxxxxx yyyyyyyyy",
-		"Birth 2 xxxxxxxxxxx yyyyyyyyy",
+		"Nginx courses",
+		"Monitoring Database Tooling",
+		"Third party surveying tools"
 	]);
 
 	addInfinity(scene, 2);
@@ -156,7 +164,7 @@ function addTextBlockRadial(at, t, x, y, fs, ff, hv, i, n) {
 		ny = pct(ry + (vPct + vPad) * (i - n + (n+1)/2)/2);
 	}
 	//console.log(r, rx, ry, lx, ly, lx2, ly2, nx, ny);
-	addTextBlock(at, t, nx, ny, fs, ff, w, h);
+	addTextBlock(at, (i+1) + ") " + t, nx, ny, fs, ff, w, h);
 }
 
 // pct
